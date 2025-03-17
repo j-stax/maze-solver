@@ -10,7 +10,7 @@ class Maze:
         num_cols,
         cell_size_x,
         cell_size_y,
-        win,
+        win=None,
     ):
         self._cells = []
         self._x1 = x1
@@ -25,12 +25,12 @@ class Maze:
     def _create_cells(self):
         y1 = self._y1
         for i in range(self._num_rows):
-            col = []
+            row = []
             x1 = self._x1
             for j in range(self._num_cols):
-                col.append(Cell(x1, y1, x1 + self._cell_size_x, y1 + self._cell_size_y, self._win))
+                row.append(Cell(x1, y1, x1 + self._cell_size_x, y1 + self._cell_size_y, self._win))
                 x1 += self._cell_size_x
-            self._cells.append(col)
+            self._cells.append(row)
             y1 += self._cell_size_y
         
         for i in range(len(self._cells)):

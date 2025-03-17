@@ -2,7 +2,7 @@ from point import Point
 from line import Line
 
 class Cell:
-    def __init__(self, x1, y1, x2, y2, win, has_left_wall=True, has_right_wall=True, has_top_wall=True, has_bottom_wall=True):
+    def __init__(self, x1, y1, x2, y2, win=None, has_left_wall=True, has_right_wall=True, has_top_wall=True, has_bottom_wall=True):
         self._x1 = x1
         self._y1 = y1
         self._x2 = x2
