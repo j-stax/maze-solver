@@ -21,6 +21,7 @@ class Maze:
         self._cell_size_y = cell_size_y
         self._win = win
         self._create_cells()
+        self._break_entrance_and_exit()
 
     def _create_cells(self):
         y1 = self._y1
@@ -50,3 +51,13 @@ class Maze:
             return
         self._win.redraw()
         time.sleep(0.05)
+
+    def _break_entrance_and_exit(self):
+        entrance_cell = self._cells[0][0]
+        exit_cell = self._cells[self._num_rows-1][self._num_cols-1]
+        entrance_cell.has_top_wall = False
+        exit_cell.has_bottom_wall = False
+        if self._win is None:
+            return
+        entrance_cell.draw()
+        exit_cell.draw()

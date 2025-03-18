@@ -17,12 +17,18 @@ class Cell:
         if self.has_top_wall:
             line = Line(Point(self._x1, self._y1), Point(self._x2, self._y1))
             self._win.draw_line(line, "black")
+        else:
+            line = Line(Point(self._x1, self._y1), Point(self._x2, self._y1))
+            self._win.draw_line(line, "#d9d9d9")
         if self.has_right_wall:
             line = Line(Point(self._x2, self._y1), Point(self._x2, self._y2))
             self._win.draw_line(line, "black")
         if self.has_bottom_wall:
             line = Line(Point(self._x2, self._y2), Point(self._x1, self._y2))
             self._win.draw_line(line, "black")
+        else: 
+            line = Line(Point(self._x2, self._y2), Point(self._x1, self._y2))
+            self._win.draw_line(line, "#d9d9d9")
         if self.has_left_wall:
             line = Line(Point(self._x1, self._y2), Point(self._x1, self._y1))
             self._win.draw_line(line, "black")
