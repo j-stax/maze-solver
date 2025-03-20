@@ -1,4 +1,5 @@
 import unittest
+import random
 from maze import Maze
 
 class Tests(unittest.TestCase):
@@ -25,6 +26,14 @@ class Tests(unittest.TestCase):
             m._cells[m._num_rows-1][m._num_cols-1].has_bottom_wall,
             False
         )
+
+    def test_reset_cells_visited(self):
+        m = Maze(20, 20, 5, 6, 20, 20)
+        rand_row = random.randrange(5)
+        rand_col = random.randrange(6)
+        m._cells[rand_row][rand_col].visited = True
+        m._reset_cells_visited()
+        self.assertEqual(m._cells[rand_row][rand_col].visited, False)
 
 if __name__ == "__main__":
     unittest.main()

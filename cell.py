@@ -2,7 +2,7 @@ from point import Point
 from line import Line
 
 class Cell:
-    def __init__(self, x1, y1, x2, y2, win=None, has_left_wall=True, has_right_wall=True, has_top_wall=True, has_bottom_wall=True):
+    def __init__(self, x1, y1, x2, y2, win=None, has_left_wall=True, has_right_wall=True, has_top_wall=True, has_bottom_wall=True, visited=False):
         self._x1 = x1
         self._y1 = y1
         self._x2 = x2
@@ -12,6 +12,7 @@ class Cell:
         self.has_right_wall = has_right_wall
         self.has_top_wall = has_top_wall
         self.has_bottom_wall = has_bottom_wall
+        self.visited=visited
     
     def draw(self):
         if self.has_top_wall:
@@ -41,5 +42,6 @@ class Cell:
         p2_ctr_half_y = (to_cell._y2 - to_cell._y1) // 2
         line = Line(Point(self._x1 + p1_ctr_half_x, self._y1 + p1_ctr_half_y), Point(to_cell._x1 + p2_ctr_half_x, to_cell._y1 + p2_ctr_half_y))
         self._win.draw_line(line, line_color)
+
         
         
