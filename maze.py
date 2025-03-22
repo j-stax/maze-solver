@@ -29,10 +29,14 @@ class Maze:
         self._cell_size_x = cell_size_x
         self._cell_size_y = cell_size_y
         self._win = win
-        self._create_cells()
-        self._break_entrance_and_exit()
         if seed is not None:
             random.seed(seed)
+
+        self._create_cells()
+        self._break_entrance_and_exit()
+        self._break_walls_r(0, 0)
+        self._reset_cells_visited()
+        
 
     def _create_cells(self):
         y1 = self._y1

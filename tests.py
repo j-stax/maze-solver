@@ -28,9 +28,11 @@ class Tests(unittest.TestCase):
         )
 
     def test_reset_cells_visited(self):
-        m = Maze(20, 20, 5, 6, 20, 20)
-        rand_row = random.randrange(5)
-        rand_col = random.randrange(6)
+        num_rows = 5
+        num_cols = 6
+        m = Maze(20, 20, num_rows, num_cols, 20, 20)
+        rand_row = random.randrange(num_rows)
+        rand_col = random.randrange(num_cols)
         m._cells[rand_row][rand_col].visited = True
         m._reset_cells_visited()
         self.assertEqual(m._cells[rand_row][rand_col].visited, False)
