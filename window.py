@@ -39,7 +39,7 @@ def main():
     # c2 = Cell(100, 40, 140, 80, win)
     # c2.draw()
     # c.draw_move(c2)
-    m = Maze(40, 40, 3, 3, 40, 40, win, 0)
+    m = Maze(40, 40, 6, 5, 40, 40, win)
     win.wait_for_close()
 
 main()

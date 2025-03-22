@@ -99,7 +99,6 @@ class Maze:
             # if there is nowhere to go from here
             # just break out
             if len(next_index_list) == 0:
-                print(f'i: {i}, j: {j}')
                 self._draw_cell(i, j)
                 return
 
