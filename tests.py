@@ -31,11 +31,12 @@ class Tests(unittest.TestCase):
         num_rows = 5
         num_cols = 6
         m = Maze(20, 20, num_rows, num_cols, 20, 20)
-        rand_row = random.randrange(num_rows)
-        rand_col = random.randrange(num_cols)
-        m._cells[rand_row][rand_col].visited = True
-        m._reset_cells_visited()
-        self.assertEqual(m._cells[rand_row][rand_col].visited, False)
+        for row in range(num_rows):
+            for col in range(num_cols):
+                self.assertEqual(
+                    m._cells[row][col].visited,
+                    False
+                )
 
 if __name__ == "__main__":
     unittest.main()
